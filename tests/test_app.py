@@ -26,6 +26,12 @@ class App(unittest.TestCase):
         self.assertEqual(result, 2.0)
         self.assertIsInstance(result, float)
 
+    def test_median_even_count_odd_sum_not_floored(self):
+        # middle two sum to an odd number: integer division would give 1.0
+        self.assertEqual(median([1, 2]), 1.5)
+        self.assertEqual(median([1.0, 2.0]), 1.5)
+        self.assertEqual(median([-2, -1]), -1.5)
+
     def test_median_reads_iterable_once(self):
         self.assertEqual(median(x for x in [9, 1, 5]), 5)
         self.assertEqual(median(iter([1, 2, 3, 4])), 2.5)
