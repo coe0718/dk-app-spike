@@ -1,3 +1,4 @@
+import decimal
 import pathlib
 import sys
 import unittest
@@ -50,7 +51,8 @@ class App(unittest.TestCase):
                 mean(bad)
 
     def test_mean_rejects_non_numbers(self):
-        for bad in (["1", 2], [None], [1, "x"], [1j], [[1]]):
+        for bad in (["1", 2], [None], [1, "x"], [1j], [[1]],
+                    [decimal.Decimal("1.5")], [1, decimal.Decimal(2)]):
             with self.assertRaises(TypeError):
                 mean(bad)
 
