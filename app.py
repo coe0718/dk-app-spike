@@ -13,7 +13,7 @@ def median(values):
     """Return the median of an iterable of numbers (read once).
 
     Odd count: the middle value. Even count: the mean of the two middle
-    values, as a float. Raises ValueError("median of no values") when empty,
+    values, as a float. Raises ValueError("median of nothing") when empty,
     and TypeError for a bool or any non-number.
     """
     items = list(values)
@@ -21,7 +21,7 @@ def median(values):
         if isinstance(v, bool) or not isinstance(v, numbers.Real):
             raise TypeError(f"median needs numbers, got {type(v).__name__}")
     if not items:
-        raise ValueError("median of no values")
+        raise ValueError("median of nothing")
     items.sort()
     n = len(items)
     mid = n // 2
