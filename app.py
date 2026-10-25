@@ -25,3 +25,9 @@ def mean(values):
     if count == 0:
         raise ValueError("mean of no values")
     return float(total / count)
+
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("cannot divide by zero: b must be non-zero")
+    return a / b
