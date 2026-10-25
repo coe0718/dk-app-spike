@@ -27,4 +27,4 @@ def median(values):
     mid = n // 2
     if n % 2:
         return items[mid]
-    return float((items[mid - 1] + items[mid]) / 2)
+    return float((items[mid - 1] + items[mid]) // 2)
