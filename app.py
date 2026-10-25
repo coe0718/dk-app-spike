@@ -1,2 +1,8 @@
 def add(a, b):
     return a + b
+
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("cannot divide by zero: b must be non-zero")
+    return a / b
