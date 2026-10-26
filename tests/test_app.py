@@ -4,10 +4,14 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
-from app import add, divide, mean, subtract  # noqa: E402
+from app import add, divide, mean, multiply, subtract  # noqa: E402
 
 
 class App(unittest.TestCase):
+    def test_multiply(self):
+        self.assertEqual(multiply(3, 4), 12)
+        self.assertEqual(multiply(-2, 5), -10)
+
     def test_add(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(1, 2), 3)
@@ -77,9 +81,3 @@ class DivideTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-
-def test_multiply():
-    from app import multiply
-    assert multiply(3, 4) == 12
-    assert multiply(-2, 5) == -10
